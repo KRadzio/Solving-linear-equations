@@ -32,7 +32,7 @@ using std::chrono::time_point;
 void saveErrToFile(double *v, string fileName, int N)
 {
     ofstream file;
-    file.open(fileName);
+    file.open(fileName, std::ios_base::openmode::_S_trunc);
     for (int i = 0; i < N; i++)
     {
         file << v[i] << endl;
@@ -314,6 +314,9 @@ int main()
         A[i] = new double[N_ABCD];
     double *b = new double[N_ABCD];
     double *x = new double[N_ABCD];
+
+    // wyczyść plik z czasem
+    saveErrToFile(b,TIME_FILE_NAME,0);
 
     // B
     cout << endl;
