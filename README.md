@@ -1,1 +1,1 @@
-# MNProj2
+# Solving-linear-equations
